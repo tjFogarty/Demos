@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+pageCSS: 'public/css/home.css'
+---
+
+<div class="home-page-hero">
+  <div class="home-page-hero__content">
+    <h1 class="home-page-hero__title">
+      <span class="home-page-hero__title--small">Oh look, it's some</span>
+      Web Dev Demos
+      <span class="home-page-hero__title--small">by TJ</span>
+    </h1>
+  </div>
+</div>
+
+<div class="container">
+  <ul class="demo-list">
+  {%- for post in collections.demo -%}
+    <li class="demo-list__item">
+      <a href="{{ post.url }}" class="demo-list__link">
+        <span class="demo-list__title">{{ post.data.title }}</span>
+
+        {%- if post.data.description -%}
+          <span class="demo-list__description">{{ post.data.description }}</span>
+        {%- endif -%}
+        <ul class="demo-list__tags">
+          {%- for tag in post.data.tags -%}
+            <li>{{ tag }}</li>
+          {%- endfor -%}
+        </ul>
+      </a>
+    </li>
+  {%- endfor -%}
+  </ul>
+</div>
