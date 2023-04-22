@@ -3,13 +3,14 @@
   padding: 50px 20px;
   background: var(--primary);
   color: #fff;
+  margin-bottom: 30px;
 }
 
 .home-page-hero__title {
   color: var(--accent);;
   font-size: 10rem;
   margin: 0 auto;
-  max-width: 700px;
+  max-width: var(--container-width);
 }
 
 .home-page-hero__title--small {
@@ -26,14 +27,14 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .demo-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   color: #121212;
 }

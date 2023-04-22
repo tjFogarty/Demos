@@ -1,6 +1,7 @@
 :root {
-  --primary: #602457;
-  --accent: #ACD49D;
+  --primary: #27184f;
+  --accent: #f56468;
+  --container-width: 800px;
 }
 
 *, *:before, *:after {
