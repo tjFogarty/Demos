@@ -25,7 +25,9 @@ pageCSS: 'public/css/home.css'
         {%- endif -%}
         <ul class="demo-list__tags">
           {%- for tag in post.data.tags -%}
+            {% if tag !== 'demo' %}
             <li>{{ tag }}</li>
+            {% endif %}
           {%- endfor -%}
         </ul>
       </a>
