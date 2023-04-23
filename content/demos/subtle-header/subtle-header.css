@@ -1,0 +1,94 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Gloock';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/gloock-v1-latin-regular.woff2') format('woff2'),
+       url('/fonts/gloock-v1-latin-regular.woff') format('woff');
+}
+
+.c-hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c-hero__content {
+  position: relative;
+  overflow: hidden;
+  width: 80vw;
+  height: 580px;
+  opacity: 0;
+  animation: hero-reveal 0.5s ease 0.5s forwards;
+}
+
+.c-hero__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  animation: hero-text-reveal 0.5s ease 1s forwards;
+}
+
+.c-hero__title {
+  font-family: 'Gloock', sans-serif;
+  margin-top: 0;
+  margin-bottom: 0.3em;
+  font-size: 3.5em;
+}
+
+.c-hero__subtitle,
+.c-hero__title {
+  transition: transform ease 0.1s;
+}
+
+.c-hero__image {
+  position: relative;
+  z-index: -1;
+  top: -400px;
+  inset-inline-start: -450px;
+  transition: transform ease 0.1s, blur ease 0.3s;
+}
+
+.c-hero__image:hover {
+  filter: blur(10px);;
+}
+
+@keyframes hero-reveal {
+  0% {
+    opacity: 0;
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  }
+}
+
+@keyframes hero-text-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

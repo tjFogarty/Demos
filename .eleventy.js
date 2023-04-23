@@ -6,7 +6,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({
     './public/': '/',
     './node_modules/normalize.css/normalize.css': '/css/normalize.css',
-    'content/**/*.{js,css,mp3}': '/assets/'
+    'content/**/*.{mp3}': '/assets/'
   });
 
   eleventyConfig.addWatchTarget('content/**/*.{svg,webp,png,jpeg,css,js,mp3}');
